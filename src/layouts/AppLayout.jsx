@@ -1,16 +1,21 @@
-import React from 'react'
-import { Outlet, Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react';
+import React, { useState } from 'react'
 
+// Bootstrap
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+// Router
+import { Outlet, Link, useNavigate } from 'react-router-dom'
+
+// AppLayout
 const AppLayout = () => {
   const [ keyword, setKeyword ] = useState('');
+
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (keyword.trim() !== '') {
@@ -18,12 +23,13 @@ const AppLayout = () => {
       setKeyword('')
     }
   }
+
   return (
     <div>
       <main>
-          <Navbar expand="lg" variant='dark' bg='dark'>
+          <Navbar expand="lg" variant='dark'>
             <Container>
-              <Navbar.Brand href="/">MOVIE 306</Navbar.Brand>
+              <Navbar.Brand href="/">MVDB</Navbar.Brand>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -52,7 +58,7 @@ const AppLayout = () => {
         <Outlet></Outlet>
       </main>
       <footer className='footer'>
-        <p>© 2025 MOVIE 306. All rights reserved</p>
+        <p>© 2025 MVDB.</p>
       </footer>
     </div>
   )

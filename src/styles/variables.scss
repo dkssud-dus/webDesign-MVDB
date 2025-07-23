@@ -1,10 +1,19 @@
-/* Color */
-$primary: #FFDC16;
-$secondary: blue;
-$success : orange;
-$danger : pink;
-$info : hotpink;
-$warning : lightgreen;
-$light: rgb(248, 236, 124);
-$dark: rgb(32, 32, 32);
+@import './fonts.scss';
 
+/* Color */
+$white: #FBFBFB;
+$whiteOpacity30: rgba($white, .3);
+
+$black: #191818;
+$blackOpacity50: rgba($black, .5);
+$blackOpacity30: rgba($black, .3);
+
+$textPrimary: #FBFBFB;
+$background: #000000;
+
+$primary: #FFDC16;
+$secondary: #F7D000;
+$accent: #FFF0B3;
+
+/* Fonts */
+$fontBody: 'HakgyoansimWoojuR';

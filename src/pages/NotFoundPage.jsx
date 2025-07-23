@@ -9,11 +9,11 @@ const NotFoundPage = () => {
         <img src="../../images/404.png" alt="404" />
       </div>
       <div className="notFound-text">
-        <span>이런!</span>
-        <strong>찾으시는 페이지가 없습니다.</strong>
+        <span>Oops!</span>
+        <strong>The page you're looking for doesn't exist.</strong>
       </div>
       <Link className="notFound-button" to={'/'}>
-        되돌아가기
+      Go back home
       </Link>
     </div>
   )

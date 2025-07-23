@@ -82,6 +82,36 @@ const trailer = trailerList.find(
   // console.log('ID', id ,'/', data);
 
   console.log('results?.[0]', reviewData?.data?.results?.[0])
+
+  // Star
+  const renderSimpleStarRating = (voteAverage) => {
+    const starCount = 5; 
+    const rating = voteAverage / 2; 
+
+    let starsHtml = ''; 
+    
+    for (let i = 0; i < Math.floor(rating); i++) {
+      starsHtml += '★';
+    }
+    
+    if (rating % 1 >= 0.5) {
+      starsHtml += '★';
+    }
+    
+    const currentStarCount = starsHtml.length;
+    for (let i = currentStarCount; i < starCount; i++) {
+      starsHtml += '☆';
+    }
+
+    return (
+      <span className="star-rating">
+        {starsHtml}
+        <span className="vote-average-text"> ({voteAverage.toFixed(1)})</span>
+      </span>
+    );
+  };
+
+
   return (
     <div className='movie-detail'>
         <div className="visual"
@@ -89,41 +119,37 @@ const trailer = trailerList.find(
           backgroundImage:`url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie?.backdrop_path})`
         }}
         >
-
           <Container>
             <Row className='aline-items-center'>
               <Col md={4}>
                 <img
                   src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${movie?.poster_path}`}
                   alt={movie?.title}
-                  className='img-fluid rounded shadow'
+                  className='img-fluid shadow'
                 />
               </Col>
               <Col md={8}>
-                <h2>
-                  {movie?.title}
-                </h2>
-                <p className='date'>{movie?.release_date}</p>
-                <p>{movie?.overview}</p>
-                <div className='lang mt-2'>
-                  <strong>
-                    {movie.production_countries?.map((c) => c.name).join(',')}
-                  </strong>
-                  <span className='original-language mb-2'>
-                    {movie.original_language?.toUpperCase()}
+                <div className="title">
+                  <h2>
+                    {movie?.title}
+                  </h2>
+                </div>
+                <div className="info">
+                  <span className='date'>{movie?.release_date}</span>
+                  {renderSimpleStarRating(movie.vote_average)} 
+                </div>
+                <div className="overview">
+                  <p>{movie?.overview}</p>
+                </div>
+                <div className="badgeList">
+                  <span className='age'>
+                    <Badge>
+                      {movie?.adult? '18+' : 'ALL'}
+                    </Badge>
                   </span>
-                </div>
-                <span className='age mb-4'>
-                  <Badge>
-                    {movie?.adult? '18+' : 'ALL'}
-                  </Badge>
-                </span>
-                <div className="genre mb-2">
-                  <span>{movie.genres.map((genre) => (<Badge>{genre.name}</Badge>))}</span>
-                </div>
-                <div className='score mt-2 mb-2'>
-                  <strong>score</strong>
-                  <Badge>{movie?.vote_average.toFixed(1)}</Badge>
+                  <div className="genre">
+                    <span>{movie.genres.map((genre) => (<Badge>{genre.name}</Badge>))}</span>
+                  </div>
                 </div>
                 {trailer?(
                   <Button className='trailer_btn' onClick={handleShow}>
@@ -143,7 +169,8 @@ const trailer = trailerList.find(
             </Modal.Header>
             <Modal.Body>
               {trailer? <div className='ratio ratio-16x9'>
-                <iframe src={`https://www.youtube.com/embed/${trailer?.key}`}></iframe>
+                <iframe width="100%"
+                height="500" src={`https://www.youtube.com/embed/${trailer?.key}`}></iframe>
               </div>
               : <p>No Trailer Available</p>}
             </Modal.Body>
@@ -169,10 +196,10 @@ const trailer = trailerList.find(
                         {review.author_details.avatar_path? (<img src={`https://media.themoviedb.org/t/p/w45_and_h45_face/${review.author_details.avatar_path}`} alt={review.author} />):(<div className='img-none'>{review.author.slice(0,1)}</div>)}
                       </div>
                       <strong>{review.author}</strong>
-                      <Badge>💛 {review.author_details.rating}</Badge>
-                      <span>
+                      <span className='date'>
                       {review.created_at.slice( 0 , 10)}
-                    </span>
+                      </span>
+                      {renderSimpleStarRating(review.author_details.rating)} 
                     </div>
                     <p>{review.content.length > 200 ? (
                       review.content.slice( 0, 200 ) + '…'

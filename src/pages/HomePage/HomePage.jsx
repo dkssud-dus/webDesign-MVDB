@@ -1,4 +1,6 @@
 import React from 'react'
+
+// Components
 import Banner from './banner/Banner'
 import PopularMovieSlide from './popularMovieSlide/PopularMovieSlide'
 import TopRatedMovieSlide from './topRatedMovieSlide/TopRatedMovieSlide'
@@ -8,32 +10,33 @@ import NowPlayingMovieSlide from './nowPlayingMovieSlide/NowPlayingMovieSlide'
 import { Container } from 'react-bootstrap'
 
 const HomePage = () => {
-
+  
+  // Slide Data
   const movieSection = [
     {
       id: "Popular",
       title: "Popular",
-      desc: "인기 있는 영화를 추천합니다.",
+      desc: "These hits are just too good to miss!",
       component: <PopularMovieSlide/>
     },
     {
       id: "Now Playing",
       title: "Now Playing",
-      desc: "현재 상영 영화를 추천합니다.",
+      desc: "Catch ‘em while they’re still hot in theaters!",
       component: <NowPlayingMovieSlide/>
     },
     {
       id: "Top Rated",
       title: "Top Rated",
-      desc: "평점 높은 영화를 추천합니다.",
+      desc: "Critics love them, and so will you!",
       component: <TopRatedMovieSlide/>
     },
     {
       id: "Upcoming",
       title: "Upcoming",
-      desc: "최신 개봉 영화를 추천합니다.",
+      desc: "Coming soon... Get ready for the big screen thrill!",
       component: <UpcomingMovieSlide/>
-    },
+    }
   ]
   
   return (
