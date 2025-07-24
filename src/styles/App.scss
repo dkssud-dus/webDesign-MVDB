@@ -483,69 +483,81 @@ body {
   }
 }
 
+// Movie page
+.movie-page{
+  .container{
+    margin-top: 100px;
+    h2{
+      margin-bottom: 30px;
+      font-size: 36px;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+}
+
+// My page
 .my-page{
   .container{
     margin-top: 100px;
     h2{
-      font-size: 48px; font-weight: bold;
+      font-size: 36px; font-weight: bold;
+      font-style: italic;
     }
     .row{
-      display: flex;
-      justify-content: space-between;
       > div{
         padding: 30px;
-        border: 1px solid lightgrey;
-        border-radius: 30px;
-        &.col-md-5{
+        &.left-box{
           display: flex;
+          flex-direction: column;
+          border: 1px solid $white;
           .my-image{
-            flex:2;
+            width: 250px; height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50%;
+            background-color: $primary;
             img{
               height: 70%;
             }
           }
           .my-info{
-            flex:3;
-            ul{
+            margin-top: 20px;
+            > ul{
+              padding-left: 0;
               display: flex;
               flex-direction: column;
               gap: 10px;
-              li{
+              > li{
                 list-style: none;
+                margin-bottom: 10px;
                 display: flex;
                 flex-direction: column;
                 word-break: normal;
                 &:last-of-type{
                   margin-top: 20px;
                   a{
-                    color: $primary;
+                    width: 100px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid $primary;
+                    font-weight: bold;
+                    color: $white;
+                    transition: .35s;
+                    &:hover{
+                      background-color: $primary;
+                      color: $black;
+                    }
                   }
                 }
                 b{
-                  font-size: 18px;
+                  margin-bottom: 5px;
+                  font-size: 20px; font-weight: bold;
+                  font-style: italic;
                 }
-              }
-            }
-          }
-        }
-        &.col-md-7{
-          .my-movie{
-            > ul{
-              padding: 0;
-              display: flex;
-              flex-direction: column;
-              gap: 20px;
-              > li{
-                display: flex;
-                flex-direction: column;
-                list-style: none;
-                b{
-                  font-size: 18px;
-                }
-                span{}
                 ul{
                   padding: 0;
                   display: flex;
@@ -565,10 +577,57 @@ body {
             }
           }
         }
-        &.col-md-12{
-          h3{
-            margin-bottom: 30px;
-            font-weight: bold;
+        &.right-box{
+          .my-movie-stats{
+            padding: 30px;
+            background-color: $whiteOpacity30;
+            > ul{
+              padding: 0;
+              display: flex;
+              flex-direction: row;
+              gap: 20px;
+              > li{
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                b{
+                  font-size: 20px; font-weight: bold;
+                  font-style: italic;
+                }
+                span{}
+              }
+            }
+          }
+          .my-movie-list{
+            margin-bottom: 50px;
+            h3{
+              margin-bottom: 30px;
+              font-size: 32px;
+              font-weight: bold;
+              font-style: italic;
+            }
+            .react-multi-carousel-list{
+              .react-multi-carousel-track{
+                .react-multi-carousel-item{
+                  .movie-card-wrap{
+                    .movie-card-box{
+                      padding: 10px;
+                      border: none;
+                      .movie-card{
+                        height: 250px;
+                        margin-right: 0;
+                      }
+                    }
+                    .movie-title{
+                      font-size: 18px;
+                    }
+                    .star-rating{
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -576,6 +635,7 @@ body {
   }
 }
 
+// Login
 .login{
   width: 100vw; height: 100vh;
   display: flex;
@@ -604,7 +664,7 @@ body {
       &.password{}
       .form-control{
         width: 450px; height: 55px;
-        border-radius: 10px;
+        border-radius: 0;
         color: #fff;
         border: 1px lightgrey solid;
         background: #000;
@@ -633,20 +693,21 @@ body {
     .btn{
       height: 55px;
       margin-top: 20px;
-      background-color: #000;
+      background-color: $black;
+      border-radius: 0;
       border: 1px solid $primary;
       font-size: 20px;
       font-weight: bold;
       &:hover{
         background-color: $primary;
-        color: #000;
+        color: $black;
       }
     }
     .form-check{
       margin-top: 10px;;
       input{
         border-radius: 50%;
-        background-color: #000;
+        background-color: $black;
         border: 1px solid $primary;
         &:checked{
           background-color: $primary;
@@ -769,7 +830,7 @@ body {
     img{
       width: 340px;
       position: absolute;
-      bottom: -80px; left: 130px;
+      bottom: -50px; left: 130px;
     }
   }
   .notFound-text{
@@ -789,7 +850,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid $primary;
-    font-size: 20px;
+    font-size: 20px; font-weight: bold;
     text-decoration: none;
     color: $white;
     transition: .35s;

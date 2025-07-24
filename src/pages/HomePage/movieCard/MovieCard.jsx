@@ -53,7 +53,7 @@ const MovieCard = ({movie}) => {
     style={{
       cursor: 'pointer'
     }}
-    onClick={() => navigate(`/movie/${movie.id}`)}
+    onClick={() => navigate(`/movies/${movie.id}`)}
     >
       <div className="movie-card-box">
         <div className='movie-card'

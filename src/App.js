@@ -26,7 +26,7 @@ function App() {
         <Route index element={<HomePage></HomePage>}></Route>
 
         {/* Move */}
-        <Route path='/movie'>
+        <Route path='/movies'>
           <Route index element={<MoviePage></MoviePage>}></Route>
           <Route path=':id' element={<MovieDetailPage></MovieDetailPage>}></Route>
         </Route>

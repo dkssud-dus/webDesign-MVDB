@@ -37,7 +37,7 @@ const AppLayout = () => {
                   navbarScroll
                 >
                   <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                  <Nav.Link as={Link} to='/movie'>Movies</Nav.Link>
+                  <Nav.Link as={Link} to='/movies'>Movies</Nav.Link>
                   <Nav.Link as={Link} to='/mypage'>MyPage</Nav.Link>
                   <Nav.Link as={Link} to='/login'>Login</Nav.Link>
                 </Nav>
