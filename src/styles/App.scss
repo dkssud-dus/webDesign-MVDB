@@ -166,15 +166,16 @@ body {
 
 // Movie card
 .movie-card-wrap{
-  margin-right: 30px;
+  margin-right: 20px;
   .movie-card-box{
-    padding: 30px;
+    padding: 20px;
+    padding-right: 10px;
     border: 1px solid $white;
     overflow: hidden;
     transition: .35s;
     .movie-card{
       margin-right: 10px;
-      height: 350px;
+      height: 370px;
       position: relative;
       background-size: cover;
       background-position: center;
@@ -439,7 +440,7 @@ body {
             }
           }
           p{
-            max-height: 70px;
+            height: fit-content;
             padding: 15px 20px;
             background-color: $whiteOpacity30;
           }
@@ -492,6 +493,18 @@ body {
       font-size: 36px;
       font-weight: bold;
       font-style: italic;
+    }
+    .row{
+      .col{
+        .movie-card-wrap{
+          .movie-card-box{
+            padding: 15px;
+            .movie-card{
+              margin-right: 0;
+            }
+          }
+        }
+      }
     }
   }
 }

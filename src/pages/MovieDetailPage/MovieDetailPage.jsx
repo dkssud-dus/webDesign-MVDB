@@ -202,7 +202,7 @@ const trailer = trailerList.find(
                       {renderSimpleStarRating(review.author_details.rating)} 
                     </div>
                     <p>{review.content.length > 200 ? (
-                      review.content.slice( 0, 200 ) + '…'
+                      review.content.slice( 0, 280 ) + '…'
                     ) : ( review.content)}</p>
                     <a href={review.url} target="_blank" rel="noopener noreferrer">
                       read more
