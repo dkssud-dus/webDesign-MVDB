@@ -219,7 +219,7 @@ const trailer = trailerList.find(
                 <Row>
                   {similarData.data.results.slice(0, 4).map((similar) => (
                     <Col key={similar.id} md={3}>
-                      <Link to={`/movie/${similar.id}`} className="text-decoration-none text-dark">
+                      <Link to={`/movies/${similar.id}`} className="text-decoration-none text-dark">
                         <div className='similar-movie'>
                           <img
                             src={
