@@ -123,7 +123,7 @@
 ### 2.2. Tech Stack
 1. REACT.js        
    1.1. Axios    
-   1.2. React Query(TanStack Query)         
+   1.2. React Query (TanStack Query)         
    1.3. React Router         
    1.4. React Bootstrap        
    1.5. React Bootstrap Icons        
