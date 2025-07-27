@@ -75,7 +75,7 @@ const Banner = () => {
     >
       <Container className="banner-text-box">
         <div className="title-box">
-          <h2 onClick={() => navigate(`/movie/${movie.id}`)}>{data.data.results[0].title}</h2>
+          <h2 onClick={() => navigate(`/movies/${movie.id}`)}>{data.data.results[0].title}</h2>
         </div>
         <p>{movie.overview}</p>
         {renderSimpleStarRating(movie.vote_average)} 
